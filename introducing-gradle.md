@@ -6,7 +6,7 @@ date: 2016-01-08
 # Project automation
 ## Anatomy of a build tool
 
-**BUILD FILE**
+**Build file**
 
 - contains the configuration needed for the build
 - defines external dependencies such as third-party libraries
@@ -16,13 +16,13 @@ date: 2016-01-08
 
 Oftentimes, a scripting language is used to express the build logic. That’s why a build file is also referred to as a build script.
 
-**BUILD INPUTS AND OUTPUTS**
+**Build input and output**
 
 Complex task dependency graphs may use the output of a dependent task as input.
 
 ![enter image description here](https://i.imgur.com/H2uDnAG.png)
 
-**BUILD ENGINE**
+**Build engine**
 
 Processes the build file at run- time, resolves dependencies between tasks, and sets up the entire configuration needed to command the execution.
 
@@ -30,7 +30,7 @@ Once the internal model is built, the engine will execute the series of tasks in
 
 ![enter image description here](https://i.imgur.com/YUVMYN5.png)
 
-**DEPENDENCY MANAGER**
+**Dependency manager**
 
 ![enter image description here](https://i.imgur.com/FdNXxQl.png)
 
@@ -46,13 +46,13 @@ Maven picks up on the idea of convention over configuration, meaning that it pro
 
 Maven’s core functionality can be extended by custom logic developed as plugins.
 
-**STANDARD DIRECTORY LAYOUT**
+**Standard directory layout**
 
 By introducing a default project layout, Maven ensures that every developer with the knowledge of one Maven project will immediately know where to expect specific file types.
 
 ![enter image description here](https://i.imgur.com/OgZIxpA.png)
 
-**DEPENDENCY MANAGEMENT**
+**Dependency management**
 
 ![enter image description here](https://i.imgur.com/PvZd9fl.png)
 
@@ -64,7 +64,7 @@ Dependency management in Maven isn’t limited to external libraries. You can al
 
 ![enter image description here](https://i.imgur.com/evaYfWA.png)
 
-**SAMPLE BUILD SCRIPT**
+**Sample build script**
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -89,7 +89,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 ➥ http://maven.apache.or
 ```
 **`<packaging>jar</packageing>` defines the type of artifact produced by project**
 
-**SHORTCOMINGS**
+**Shortcomings**
 
  * proposes a default structure and lifecycle, often is too restrictive
    and may not fit your project’s needs
