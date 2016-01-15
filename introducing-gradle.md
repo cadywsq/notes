@@ -3,7 +3,7 @@ title: Introducing Gradle
 date: 2016-01-08
 ---
 
-## Introduction to project automation
+## 1. Introduction to project automation
 ### Anatomy of a build tool
 
 1. BUILD FILE
