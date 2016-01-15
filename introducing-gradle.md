@@ -3,10 +3,10 @@ title: Introducing Gradle
 date: 2016-01-08
 ---
 
-## 1. Introduction to project automation
-### 1.1 Anatomy of a build tool
+# Project automation
+## Anatomy of a build tool
 
-1.1.1 BUILD FILE
+**BUILD FILE**
 
 - contains the configuration needed for the build
 - defines external dependencies such as third-party libraries
@@ -16,15 +16,13 @@ date: 2016-01-08
 
 Oftentimes, a scripting language is used to express the build logic. That’s why a build file is also referred to as a build script.
 
-<!-- more -->
-
-#### BUILD INPUTS AND OUTPUTS
+**BUILD INPUTS AND OUTPUTS**
 
 Complex task dependency graphs may use the output of a dependent task as input.
 
 ![enter image description here](https://i.imgur.com/H2uDnAG.png)
 
-#### BUILD ENGINE
+**BUILD ENGINE**
 
 Processes the build file at run- time, resolves dependencies between tasks, and sets up the entire configuration needed to command the execution.
 
@@ -32,7 +30,7 @@ Once the internal model is built, the engine will execute the series of tasks in
 
 ![enter image description here](https://i.imgur.com/YUVMYN5.png)
 
-#### DEPENDENCY MANAGER
+**DEPENDENCY MANAGER**
 
 ![enter image description here](https://i.imgur.com/FdNXxQl.png)
 
@@ -40,7 +38,7 @@ The dependency manager is used to process declarative dependency definitions for
 
 Many libraries depend on other libraries, called transitive dependencies. The depen- dency manager can use metadata stored in the repository to automatically resolve transitive dependencies as well.
 
-### Apache Maven
+## Apache Maven
 
 The Maven team realized the need for a standardized proj- ect layout and unified build lifecycle.
 
@@ -48,13 +46,13 @@ Maven picks up on the idea of convention over configuration, meaning that it pro
 
 Maven’s core functionality can be extended by custom logic developed as plugins.
 
-#### STANDARD DIRECTORY LAYOUT
+**STANDARD DIRECTORY LAYOUT**
 
 By introducing a default project layout, Maven ensures that every developer with the knowledge of one Maven project will immediately know where to expect specific file types.
 
 ![enter image description here](https://i.imgur.com/OgZIxpA.png)
 
-#### DEPENDENCY MANAGEMENT
+**DEPENDENCY MANAGEMENT**
 
 ![enter image description here](https://i.imgur.com/PvZd9fl.png)
 
@@ -66,7 +64,7 @@ Dependency management in Maven isn’t limited to external libraries. You can al
 
 ![enter image description here](https://i.imgur.com/evaYfWA.png)
 
-#### SAMPLE BUILD SCRIPT
+**SAMPLE BUILD SCRIPT**
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -91,14 +89,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 ➥ http://maven.apache.or
 ```
 **`<packaging>jar</packageing>` defines the type of artifact produced by project**
 
-#### SHORTCOMINGS
+**SHORTCOMINGS**
 
  * proposes a default structure and lifecycle, often is too restrictive
    and may not fit your project’s needs
  * writing custom extensions for Maven is overly cumbersome
 * earlier versions of Maven (< 2.0.9) automatically try to update their own core plugins; for example, support for unit tests to the latest version. may cause brittle and unstable builds
 
-### Requirements for a next-generation build tool
+## Requirements for a next-generation build tool
 
 * expressive, declarative, and maintainable build language.
 * standardized project layout and lifecycle, but full flexibility and the option to fully configure the defaults.
@@ -108,9 +106,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 ➥ http://maven.apache.or
 * good integration and migration of existing build infrastructure, including the ability to import existing Ant build scripts and tools to translate existing Ant/ Maven logic into its own rule set
 * emphasis on scalable and high-performance builds
 
-## Next-generation builds with Gradle
+# Next-generation builds with Gradle
 
-### Why Gradle?
+## Why Gradle?
 
 ![enter image description here](https://i.imgur.com/PG1Mnkf.png)
 
@@ -176,7 +174,7 @@ Most common to builds is the notation of a unit of work that you want to get exe
 
 A good place to start is the Gradle Build Language Reference Guide at http://www.gradle.org/docs/current/dsl/index.html.
 
-#### Gradle is Groovy
+**Gradle is Groovy**
 
 Prominent build tools like Ant and Maven define their build logic through XML. As we all know, XML is easy to read and write, but can become a maintenance nightmare if used in large quantities. XML isn’t very expressive. It makes it hard to define com- plex custom logic.
 
@@ -184,7 +182,7 @@ Gradle takes a different approach. Under the hood, Gradle’s DSL is written wit
 
 Battle- scarred Groovy veterans will assure you that using Groovy instead of Java will boost your productivity by orders of magnitude.
 
-#### Flexible conventions
+**Flexible conventions**
 
 Default tasks are provided that make sense in the context of a Java project. For example, you can compile your Java production source code, run tests, and assemble a JAR file. Every Java project starts with a standard directory layout. It defines where to find production source code, resource files, and test code. **Convention properties** are used to change the defaults.
 
@@ -202,11 +200,11 @@ Gradle takes the middle ground by offering conventions combined with the ability
 
 ![enter image description here](https://i.imgur.com/v0msyOV.png)
 
-#### Integration with other build tools
+**Integration with other build tools**
 
 Maven POMs and plugins will be treated as Gradle natives. Maven and Ivy repositories have become an important part of today’s build infrastructure. Retrieving dependencies from a repository is only one part of the story; publishing to them is just as important. With a little configuration, Gradle can upload your project’s artifact for companywide or public consumption.
 
-### The bigger picture: continuous delivery
+## The bigger picture: continuous delivery
 
 Being able to build your source code is only one aspect of the software delivery pro- cess. More importantly, you want to release your product to a production environment to **deliver** business value.
 
@@ -218,7 +216,7 @@ Practices like automated testing, CI, and deployment feed into the general conce
 
 *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation by Jez Humble and David Farley (Addison Wesley, 2010).*
 
-#### Automating your project from build to deployment
+**Automating your project from build to deployment**
 
 Continuous delivery introduces the concept of a deployment pipeline, also referred to as the build pipeline.
 
