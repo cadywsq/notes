@@ -4,17 +4,19 @@ date: 2016-01-08
 ---
 
 ## 1. Introduction to project automation
-### Anatomy of a build tool
+### 1.1 Anatomy of a build tool
 
-1. BUILD FILE
+1.1.1 BUILD FILE
 
-* contains the configuration needed for the build
-* defines external dependencies such as third-party libraries
-* contains instructions to achieve a specific goal in the form of tasks and their interdependencies
+- contains the configuration needed for the build
+- defines external dependencies such as third-party libraries
+- contains instructions to achieve a specific goal in the form of tasks and their interdependencies
 
 ![enter image description here](https://i.imgur.com/zjyZJrV.png)
 
 Oftentimes, a scripting language is used to express the build logic. That’s why a build file is also referred to as a build script.
+
+<!-- more -->
 
 #### BUILD INPUTS AND OUTPUTS
 
