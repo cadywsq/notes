@@ -6,7 +6,7 @@ date: 2016-01-08
 ## Introduction to project automation
 ### Anatomy of a build tool
 
-#### BUILD FILE
+1. BUILD FILE
 
 * contains the configuration needed for the build
 * defines external dependencies such as third-party libraries
