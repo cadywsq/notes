@@ -295,7 +295,8 @@ It’s used for dependencies that are required for compilation but provided by t
 ```groovy
 dependencies {
 	providedCompile 'javax.servlet:servlet-api:2.5'
-	runtime 'javax.servlet:jstl:1.1.2' }
+	runtime 'javax.servlet:jstl:1.1.2'
+}
 ```
 
 Even if your project doesn’t adhere to Gradle’s standard conventions, the plugin can be used to build a WAR file. Let’s look at some customization options.
